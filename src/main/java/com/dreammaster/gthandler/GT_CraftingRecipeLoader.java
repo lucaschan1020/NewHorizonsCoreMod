@@ -1001,7 +1001,7 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
         });
 
         // Filter Machine Casing for cleanroom
-        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Vent.get(1L), bits, new Object[] {
+        GT_ModHandler.addCraftingRecipe(ItemList.Casing_Vent.get(2L), bits, new Object[] {
             "PPP",
             "SSS",
             "MFV",
@@ -1142,10 +1142,10 @@ public class GT_CraftingRecipeLoader extends gregtech.loaders.postload.GT_Crafti
             ItemList.Casing_Turbine3
         });
 
-        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_Pyrolyse.get(1L), bits, new Object[] {
-            "PhP",
-            "SFS",
-            "PwP",
+        GT_ModHandler.addCraftingRecipe(CustomItemList.Casing_Pyrolyse.get(2L), bits, new Object[] {
+            "PFP",
+            "ShS",
+            "PFP",
             'P',
             OrePrefixes.plate.get(Materials.Steel),
             'S',

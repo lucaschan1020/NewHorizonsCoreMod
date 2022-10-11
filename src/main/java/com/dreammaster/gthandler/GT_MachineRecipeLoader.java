@@ -2769,17 +2769,17 @@ public class GT_MachineRecipeLoader implements Runnable {
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {new ItemStack(Blocks.brick_block), Materials.AnyBronze.getPlates(6)},
                 GT_Values.NF,
-                ItemList.Casing_BronzePlatedBricks.get(1L),
+                ItemList.Casing_BronzePlatedBricks.get(2L),
                 200,
                 30);
         GT_Values.RA.addAssemblerRecipe(
                 new ItemStack[] {
                     Materials.Steel.getPlates(4),
                     Materials.Iron.getPlates(2),
-                    ItemList.Casing_BronzePlatedBricks.get(1L)
+                    ItemList.Casing_BronzePlatedBricks.get(2L)
                 },
                 GT_Values.NF,
-                CustomItemList.Casing_Pyrolyse.get(1L),
+                CustomItemList.Casing_Pyrolyse.get(2L),
                 200,
                 30);
 
@@ -2794,7 +2794,7 @@ public class GT_MachineRecipeLoader implements Runnable {
                     GT_Utility.getIntegratedCircuit(1)
                 },
                 GT_Values.NF,
-                ItemList.Casing_Vent.get(1L),
+                ItemList.Casing_Vent.get(2L),
                 600,
                 120);
 
