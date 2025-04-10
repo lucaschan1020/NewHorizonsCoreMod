@@ -1654,14 +1654,14 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SignalTerminal", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "LengthWire", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(TinkersMechworks.ID, "SpoolWire", 1, wildcard, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "chest", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "furnace", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "chest", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapped_chest", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "crafting_table", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "furnace", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bedrock", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dispenser", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dropper", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "piston", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dispenser", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dropper", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "piston", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sticky_piston", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "rail", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "golden_rail", 1, 0, missing));
@@ -1673,14 +1673,14 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "mossy_cobblestone", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stonebrick", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lit_pumpkin", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapdoor", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "trapdoor", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_pressure_plate", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "torch", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lever", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lever", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "glass_pane", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ladder", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "redstone_torch", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "ladder", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fence", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fence_gate", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "enchanting_table", 1, 0, missing));
@@ -1694,7 +1694,7 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "book", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bow", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brick_block", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_pressure_plate", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "saddle", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wool", 1, 1, missing));
@@ -1786,9 +1786,9 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "quartz_block", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "quartz_block", 1, 1, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bookshelf", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brewing_stand", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clock", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "compass", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "brewing_stand", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "clock", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "compass", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_sword", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_shovel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "diamond_pickaxe", 1, 0, missing));
@@ -1814,8 +1814,8 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "name_tag", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "lead", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "pumpkin_pie", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "comparator", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "repeater", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "comparator", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "repeater", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 2, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 4, missing));
@@ -1824,22 +1824,22 @@ public class RecipeRemover {
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wheat", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "slime_ball", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "item_frame", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bed", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "bed", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "fishing_rod", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "poisonous_potato", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sign", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "sign", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "boat", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "painting", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "flint_and_steel", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "dragon_egg", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "map", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "skull", 1, 1, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "shears", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "shears", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "nether_star", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
-        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "wooden_door", 1, 0, missing));
+//        removeRecipeByOutputDelayed(getModItem(Minecraft.ID, "iron_door", 1, 0, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "planks", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "natura.stick", 1, wildcard, missing));
         removeRecipeByOutputDelayed(getModItem(Natura.ID, "Natura.workbench", 1, wildcard, missing));
@@ -3155,7 +3155,7 @@ public class RecipeRemover {
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" },
                 new Object[] { "nuggetPulsatingIron", "nuggetPulsatingIron", "nuggetPulsatingIron" });
-        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0, missing));
+//        removeRecipeShapedDelayed(getModItem(Minecraft.ID, "stone_button", 1, 0, missing));
         removeRecipeShapedDelayed(
                 getModItem(Minecraft.ID, "string", 1, 0, missing),
                 new Object[] { "cropCotton", "cropCotton", "cropCotton" },
