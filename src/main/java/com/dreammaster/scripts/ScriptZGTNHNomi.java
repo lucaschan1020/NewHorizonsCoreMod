@@ -796,9 +796,9 @@ public class ScriptZGTNHNomi implements IScriptLoader {
 
         final ItemStack BINDER_COMPOSITE_OUTPUT = getModItem(EnderIO.ID, "itemMaterial", 8, 2);
         addShapedRecipe(BINDER_COMPOSITE_OUTPUT,
-                GRAVEL, CLAY, GRAVEL,
-                BLOCK_SAND, GRAVEL, BLOCK_SAND,
-                GRAVEL, CLAY, GRAVEL);
+                GRAVEL, BLOCK_SAND, GRAVEL,
+                CLAY, GRAVEL, CLAY,
+                GRAVEL, BLOCK_SAND, GRAVEL);
 
         final ItemStack CONDUIT_BINDER_OUTPUT = getModItem(EnderIO.ID, "itemMaterial", 2, 1);
         GTModHandler.addSmeltingRecipe(
