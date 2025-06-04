@@ -9,6 +9,7 @@ import gregtech.api.enums.Materials;
 import gregtech.api.enums.OrePrefixes;
 import gregtech.api.util.GTModHandler;
 import gregtech.api.util.GTOreDictUnificator;
+import gregtech.api.util.GTUtility;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraftforge.fluids.FluidRegistry;
@@ -253,9 +254,9 @@ public class ScriptZGTNHNomi implements IScriptLoader {
         final String BLOCK_SAND = "sand";
         final ItemStack DUST_MALACHITE = GTOreDictUnificator.get(OrePrefixes.dust, Materials.Malachite, 1L);
         final ItemStack NUGGET_PULSATINGIRON = GTOreDictUnificator.get(OrePrefixes.nugget, Materials.PulsatingIron, 1L);
-        final ItemStack PIPE_FLUID_LARGE_PE = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Plastic, 1L);
-        final ItemStack PIPE_FLUID_LARGE_PTFE = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polytetrafluoroethylene, 1L);
-        final ItemStack PIPE_FLUID_LARGE_PBI = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polybenzimidazole, 1L);
+        final ItemStack PIPE_FLUID_LARGE_PE = GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Plastic, 1L);
+        final ItemStack PIPE_FLUID_LARGE_PTFE = GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polytetrafluoroethylene, 1L);
+        final ItemStack PIPE_FLUID_LARGE_PBI = GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polybenzimidazole, 1L);
         final ItemStack CAULDRON = getModItem(Minecraft.ID, "cauldron", 1, 0, missing);
 
         final ItemStack ENDER_CHEST = getModItem(EnderStorage.ID, "enderChest", 1, 0);
@@ -428,6 +429,19 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 PLATE_ALUMINIUM, CIRCUIT_MV, PLATE_ALUMINIUM,
                 PROCESSOR_ENGINEERING, BLOCK_FLUIX, PROCESSOR_ENGINEERING,
                 PLATE_ALUMINIUM, CIRCUIT_MV, PLATE_ALUMINIUM);
+
+        final ItemStack PLATE_ALUMINIUM_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.plate, Materials.Aluminium, 4L);
+        final ItemStack CIRCUIT_MV_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.circuit, Materials.MV, 2);
+        final ItemStack PROCESSOR_ENGINEERING_INPUT_ASSEMBLER = getModItem(AppliedEnergistics2.ID, "item.ItemMultiMaterial", 2, 24, missing);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        PLATE_ALUMINIUM_INPUT_ASSEMBLER,
+                        CIRCUIT_MV_INPUT_ASSEMBLER,
+                        PROCESSOR_ENGINEERING_INPUT_ASSEMBLER,
+                        BLOCK_FLUIX,
+                        GTUtility.getIntegratedCircuit(2))
+                .itemOutputs(ME_CONTROLLER)
+                .duration(5 * SECONDS).eut(120).addTo(assemblerRecipes);
 
         addShapedRecipe(
                 ENERGY_CELL,
@@ -877,7 +891,7 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 PIPE_FLUID_LARGE_PE, PIPE_FLUID_LARGE_PE, PIPE_FLUID_LARGE_PE,
                 CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER);
         final ItemStack CONDUIT_FLUID_CRYSTALLINE_OUTPUT_ASSEMBLER = getModItem(EnderIO.ID, "itemLiquidConduit", 24, 4);
-        final ItemStack PIPE_FLUID_LARGE_PE_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Plastic, 3L);
+        final ItemStack PIPE_FLUID_LARGE_PE_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Plastic, 3L);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CONDUIT_BINDER_INPUT,
@@ -891,7 +905,7 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 PIPE_FLUID_LARGE_PTFE, PIPE_FLUID_LARGE_PTFE, PIPE_FLUID_LARGE_PTFE,
                 CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER);
         final ItemStack CONDUIT_FLUID_MELODIC_OUTPUT_ASSEMBLER = getModItem(EnderIO.ID, "itemLiquidConduit", 24, 5);
-        final ItemStack PIPE_FLUID_LARGE_PTFE_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polytetrafluoroethylene, 3L);
+        final ItemStack PIPE_FLUID_LARGE_PTFE_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polytetrafluoroethylene, 3L);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CONDUIT_BINDER_INPUT,
@@ -905,7 +919,7 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 PIPE_FLUID_LARGE_PBI, PIPE_FLUID_LARGE_PBI, PIPE_FLUID_LARGE_PBI,
                 CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER);
         final ItemStack CONDUIT_FLUID_STELLAR_OUTPUT_ASSEMBLER = getModItem(EnderIO.ID, "itemLiquidConduit", 24, 6);
-        final ItemStack PIPE_FLUID_LARGE_PBI_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polybenzimidazole, 3L);
+        final ItemStack PIPE_FLUID_LARGE_PBI_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeLarge, Materials.Polybenzimidazole, 3L);
         GTValues.RA.stdBuilder()
                 .itemInputs(
                         CONDUIT_BINDER_INPUT,
