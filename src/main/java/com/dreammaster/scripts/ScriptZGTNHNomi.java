@@ -28,6 +28,7 @@ import static gregtech.api.enums.Mods.Minecraft;
 import static gregtech.api.recipe.RecipeMaps.alloySmelterRecipes;
 import static gregtech.api.recipe.RecipeMaps.assemblerRecipes;
 import static gregtech.api.recipe.RecipeMaps.chemicalReactorRecipes;
+import static gregtech.api.recipe.RecipeMaps.multiblockChemicalReactorRecipes;
 import static gregtech.api.recipe.RecipeMaps.wiremillRecipes;
 import static gregtech.api.util.GTModHandler.getModItem;
 import static gregtech.api.util.GTRecipeBuilder.SECONDS;
@@ -120,6 +121,7 @@ public class ScriptZGTNHNomi implements IScriptLoader {
         final ItemStack ME_CHEST = getModItem(AppliedEnergistics2.ID, "tile.BlockChest", 1, 0);
         final ItemStack ME_DRIVE = getModItem(AppliedEnergistics2.ID, "tile.BlockDrive", 1, 0);
         final ItemStack ME_IO_PORT = getModItem(AppliedEnergistics2.ID, "tile.BlockIOPort", 1, 0);
+        final ItemStack ME_CONTROLLER = getModItem(AppliedEnergistics2.ID, "tile.BlockController", 1, 0);
         final ItemStack ENERGY_CELL = getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyCell", 1, 0);
         final ItemStack ENERGY_CELL_DENSE = getModItem(AppliedEnergistics2.ID, "tile.BlockDenseEnergyCell", 1, 0);
         final ItemStack ENERGY_ACCEPTOR = getModItem(AppliedEnergistics2.ID, "tile.BlockEnergyAcceptor", 1, 0);
@@ -139,6 +141,7 @@ public class ScriptZGTNHNomi implements IScriptLoader {
         final ItemStack MACHINE_HULL_LV = ItemList.Hull_LV.get(1L);
         final ItemStack FRAMEGT_DARKSTEEL = GTOreDictUnificator.get(OrePrefixes.frameGt, Materials.DarkSteel, 1L);
         final ItemStack PLATE_CERTUSQUARTZ = GTOreDictUnificator.get(OrePrefixes.plate, Materials.CertusQuartz, 1L);
+        final ItemStack BLOCK_FLUIX = getModItem(AppliedEnergistics2.ID, "tile.BlockFluix", 1, 0, missing);
 
         final ItemStack FLUID_PATTERN_ENCODER = getModItem(AE2FluidCraft.ID, "fluid_pattern_encoder", 1, 0);
         final ItemStack FLUID_PACKET_DECODER = getModItem(AE2FluidCraft.ID, "fluid_packet_decoder", 1, 0);
@@ -238,6 +241,9 @@ public class ScriptZGTNHNomi implements IScriptLoader {
         final ItemStack CONDUIT_ITEM = getModItem(EnderIO.ID, "itemItemConduit", 1, 0);
         final ItemStack CONDUIT_ME = getModItem(EnderIO.ID, "itemMEConduit", 1, 0);
         final ItemStack CONDUIT_FLUID_ENDER = getModItem(EnderIO.ID, "itemLiquidConduit", 1, 2);
+        final ItemStack CONDUIT_FLUID_CRYSTALLINE = getModItem(EnderIO.ID, "itemLiquidConduit", 1, 4);
+        final ItemStack CONDUIT_FLUID_MELODIC = getModItem(EnderIO.ID, "itemLiquidConduit", 1, 5);
+        final ItemStack CONDUIT_FLUID_STELLAR = getModItem(EnderIO.ID, "itemLiquidConduit", 1, 6);
         final ItemStack RESERVOIR = getModItem(EnderIO.ID, "blockReservoir", 1, 0);
 
         final ItemStack PAPER = getModItem(Minecraft.ID, "paper", 1, 0, missing);
@@ -247,6 +253,9 @@ public class ScriptZGTNHNomi implements IScriptLoader {
         final String BLOCK_SAND = "sand";
         final ItemStack DUST_MALACHITE = GTOreDictUnificator.get(OrePrefixes.dust, Materials.Malachite, 1L);
         final ItemStack NUGGET_PULSATINGIRON = GTOreDictUnificator.get(OrePrefixes.nugget, Materials.PulsatingIron, 1L);
+        final ItemStack PIPE_FLUID_LARGE_PE = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Plastic, 1L);
+        final ItemStack PIPE_FLUID_LARGE_PTFE = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polytetrafluoroethylene, 1L);
+        final ItemStack PIPE_FLUID_LARGE_PBI = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polybenzimidazole, 1L);
         final ItemStack CAULDRON = getModItem(Minecraft.ID, "cauldron", 1, 0, missing);
 
         final ItemStack ENDER_CHEST = getModItem(EnderStorage.ID, "enderChest", 1, 0);
@@ -254,7 +263,7 @@ public class ScriptZGTNHNomi implements IScriptLoader {
 
         final String BLOCK_OBSIDIAN = "blockObsidian";
         final ItemStack STICK_COPPER = GTOreDictUnificator.get(OrePrefixes.stick, Materials.Copper, 1L);
-        final ItemStack TANK_GOLD = getModItem(IronTanks.ID, "goldTank", 1, 4096, missing);
+        final ItemStack TANK_GOLD = getModItem(IronTanks.ID, "goldTank", 1, 0, missing);
 
         final ItemStack ENDER_PEARL = getModItem(Minecraft.ID, "ender_pearl", 1, 0);
         final ItemStack ENDER_EYE = getModItem(Minecraft.ID, "ender_eye", 1, 0);
@@ -413,6 +422,12 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 BLOCK_GLASS, BLOCK_GLASS, BLOCK_GLASS,
                 ME_DRIVE, ME_GLASS_CABLE, ME_DRIVE,
                 INGOT_IRON, PROCESSOR_LOGIC, INGOT_IRON);
+
+        addShapedRecipe(
+                ME_CONTROLLER,
+                PLATE_ALUMINIUM, CIRCUIT_MV, PLATE_ALUMINIUM,
+                PROCESSOR_ENGINEERING, BLOCK_FLUIX, PROCESSOR_ENGINEERING,
+                PLATE_ALUMINIUM, CIRCUIT_MV, PLATE_ALUMINIUM);
 
         addShapedRecipe(
                 ENERGY_CELL,
@@ -856,6 +871,48 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 .itemOutputs(CONDUIT_FLUID_ENDER_OUTPUT_ASSEMBLER)
                 .duration(4 * SECONDS).eut(16).addTo(assemblerRecipes);
 
+        final ItemStack CONDUIT_FLUID_CRYSTALLINE_OUTPUT_CRAFT = getModItem(EnderIO.ID, "itemLiquidConduit", 12, 4);
+        addShapedRecipe(CONDUIT_FLUID_CRYSTALLINE_OUTPUT_CRAFT,
+                CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER,
+                PIPE_FLUID_LARGE_PE, PIPE_FLUID_LARGE_PE, PIPE_FLUID_LARGE_PE,
+                CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER);
+        final ItemStack CONDUIT_FLUID_CRYSTALLINE_OUTPUT_ASSEMBLER = getModItem(EnderIO.ID, "itemLiquidConduit", 24, 4);
+        final ItemStack PIPE_FLUID_LARGE_PE_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Plastic, 3L);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CONDUIT_BINDER_INPUT,
+                        PIPE_FLUID_LARGE_PE_INPUT_ASSEMBLER)
+                .itemOutputs(CONDUIT_FLUID_CRYSTALLINE_OUTPUT_ASSEMBLER)
+                .duration(4 * SECONDS).eut(64).addTo(assemblerRecipes);
+
+        final ItemStack CONDUIT_FLUID_MELODIC_OUTPUT_CRAFT = getModItem(EnderIO.ID, "itemLiquidConduit", 12, 5);
+        addShapedRecipe(CONDUIT_FLUID_MELODIC_OUTPUT_CRAFT,
+                CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER,
+                PIPE_FLUID_LARGE_PTFE, PIPE_FLUID_LARGE_PTFE, PIPE_FLUID_LARGE_PTFE,
+                CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER);
+        final ItemStack CONDUIT_FLUID_MELODIC_OUTPUT_ASSEMBLER = getModItem(EnderIO.ID, "itemLiquidConduit", 24, 5);
+        final ItemStack PIPE_FLUID_LARGE_PTFE_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polytetrafluoroethylene, 3L);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CONDUIT_BINDER_INPUT,
+                        PIPE_FLUID_LARGE_PTFE_INPUT_ASSEMBLER)
+                .itemOutputs(CONDUIT_FLUID_MELODIC_OUTPUT_ASSEMBLER)
+                .duration(4 * SECONDS).eut(256).addTo(assemblerRecipes);
+
+        final ItemStack CONDUIT_FLUID_STELLAR_OUTPUT_CRAFT = getModItem(EnderIO.ID, "itemLiquidConduit", 12, 6);
+        addShapedRecipe(CONDUIT_FLUID_STELLAR_OUTPUT_CRAFT,
+                CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER,
+                PIPE_FLUID_LARGE_PBI, PIPE_FLUID_LARGE_PBI, PIPE_FLUID_LARGE_PBI,
+                CONDUIT_BINDER, CONDUIT_BINDER, CONDUIT_BINDER);
+        final ItemStack CONDUIT_FLUID_STELLAR_OUTPUT_ASSEMBLER = getModItem(EnderIO.ID, "itemLiquidConduit", 24, 6);
+        final ItemStack PIPE_FLUID_LARGE_PBI_INPUT_ASSEMBLER = GTOreDictUnificator.get(OrePrefixes.pipeHuge, Materials.Polybenzimidazole, 3L);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        CONDUIT_BINDER_INPUT,
+                        PIPE_FLUID_LARGE_PBI_INPUT_ASSEMBLER)
+                .itemOutputs(CONDUIT_FLUID_STELLAR_OUTPUT_ASSEMBLER)
+                .duration(4 * SECONDS).eut(4096).addTo(assemblerRecipes);
+
         final ItemStack RESERVOIR_OUTPUT = getModItem(EnderIO.ID, "blockReservoir", 4, 0);
         addShapedRecipe(RESERVOIR_OUTPUT,
                 BLOCK_GLASS, BLOCK_GLASS, BLOCK_GLASS,
@@ -887,6 +944,13 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                 .fluidInputs(FLUID_NITROGEN_INPUT)
                 .itemOutputs(ENDER_PEARL_OUTPUT)
                 .duration(20 * SECONDS).eut(120).addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        DUST_BERYLLIUM,
+                        DUST_POTASSIUM_INPUT)
+                .fluidInputs(FLUID_NITROGEN_INPUT)
+                .itemOutputs(ENDER_PEARL_OUTPUT)
+                .duration(20 * SECONDS).eut(120).addTo(multiblockChemicalReactorRecipes);
 
         final ItemStack DUST_SULFUR_INPUT = GTOreDictUnificator.get(OrePrefixes.dust, Materials.Sulfur, 4L);
         GTValues.RA.stdBuilder()
@@ -895,6 +959,12 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                         DUST_SULFUR_INPUT)
                 .itemOutputs(ENDER_EYE)
                 .duration(10 * SECONDS).eut(480).addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        ENDER_PEARL,
+                        DUST_SULFUR_INPUT)
+                .itemOutputs(ENDER_EYE)
+                .duration(10 * SECONDS).eut(480).addTo(multiblockChemicalReactorRecipes);
 
         final ItemStack DUST_GOLD_INPUT = GTOreDictUnificator.get(OrePrefixes.dust, Materials.Gold, 16L);
         GTValues.RA.stdBuilder()
@@ -920,5 +990,11 @@ public class ScriptZGTNHNomi implements IScriptLoader {
                         STICKY_RESIN)
                 .itemOutputs(STICKREED)
                 .duration(20 * SECONDS).eut(120).addTo(chemicalReactorRecipes);
+        GTValues.RA.stdBuilder()
+                .itemInputs(
+                        SUGAR_CANE,
+                        STICKY_RESIN)
+                .itemOutputs(STICKREED)
+                .duration(20 * SECONDS).eut(120).addTo(multiblockChemicalReactorRecipes);
     }
 }
